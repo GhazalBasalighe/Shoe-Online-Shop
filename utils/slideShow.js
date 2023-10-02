@@ -29,7 +29,7 @@ function goToNextSlide() {
 
     // Set a new timeout for redirection after 4 seconds
     setTimeout(function () {
-      window.location.href = "../views/loading.html";
+      window.location.href = "../views/Login.html";
     }, 500);
   } else {
     nextButton.textContent = "Next";
