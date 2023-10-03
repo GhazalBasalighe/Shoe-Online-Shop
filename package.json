@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
+    "start": "json-server --watch db.json"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
-  }
+  "license": "ISC"
 }
