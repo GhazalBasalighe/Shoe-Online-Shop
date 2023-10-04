@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.{html,js}"],
+  content: ["./views/**/*.{html,js}", "./utils/**/*.{js}"],
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
+    },
+    colors: {
+      categoryBg: "#ECECEC",
+      black: "#000",
+      white: "#fff",
     },
     extend: {
       backgroundImage: {

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../styles/output.css">
+        <!-- BOOTSTRAP CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <!-- CUSTOM STYLE FOR OVERRIDING BOOTSTRAP DEFAULT -->
+        <style>
+            @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+            .category-item {
+                width: 20px;
+                height: auto;
+            }
+
+            .card-img,
+            .card-img-top {
+                border-top-left-radius: 0.75rem;
+                border-top-right-radius: 0.75rem;
+            }
+
+            .active {
+                color: white;
+                background-color: black;
+            }
+        </style>
+        <!-- CUSTOM SCRIPT -->
+        <script src="../utils/homePage.js" defer></script>
+        <!-- JQUERY CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+
+    <body class="font-inter px-6 py-4">
+        <!-- WELCOME MASSAGE -->
+        <div class="notification">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <img src="../assets/images/profilePic.png" alt="profile picture" width="48" class="rounded-full">
+                    <!-- good morning/good afternoon/good evening/good night -->
+                    <div class="flex flex-col gap-1">
+                        <span class=" text-sm text-[#757475]">Good Morning 👋</span>
+                        <!-- user name and family name -->
+                        <span class=" text-sm font-bold" id="userName">Ghazal Basalighe</span>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <img src="../assets/icons/bell.png" alt="let me know">
+                    <img src="../assets/icons/heart.png" alt="favorite">
+                </div>
+            </div>
+        </div>
+        <!-- SEARCH -->
+        <div class=" relative my-4">
+            <input type="search" name="search" id="search" placeholder="Search" class="bg-[#FAFAFA] py-2 pl-6 w-full">
+            <img src="../assets/icons/search.png" alt="search" class="absolute bottom-3 left-1">
+        </div>
+        <!-- CATEGORIES -->
+        <div class="grid-container grid grid-cols-4 gap-4 mb-4" id="categories">
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Nike.png" alt="Nike" class="category-item">
+                </div>
+                <span class="truncate">Nike</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Adidas.png" alt="Adidas" class="category-item">
+                </div>
+                <span class="truncate">Adidas</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Puma.png" alt="Puma" class="category-item">
+                </div>
+                <span class="truncate">Puma</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Asics.png" alt="Asics" class="category-item">
+                </div>
+                <span class="truncate">Asics</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Reebok.png" alt="Reebok" class="category-item">
+                </div>
+                <span class="truncate">Reebok</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/NewBalance.png" alt="NewBalance" class="category-item">
+                </div>
+                <span class="truncate w-full">NewBalance</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/Converse.png" alt="Converse.png" class="category-item">
+                </div>
+                <span class="truncate">Converse</span>
+            </div>
+            <div class="grid-item cursor-pointer flex flex-col justify-center items-center" id="more">
+                <div class="bg-categoryBg flex items-center  justify-center rounded-full w-[45px] h-[45px]">
+                    <img src="../assets/icons/more.png" alt="more" class="category-item">
+                </div>
+                <span class="truncate">more</span>
+            </div>
+        </div>
+        <!-- MOST POPULAR AND SEE ALL -->
+        <div class="flex justify-between font-semibold mb-3">
+            <span class="text-xl">Most Popular</span>
+            <a class="text-base text-decoration-none text-[#000] hover:text-[#000]" href="">See All</a>
+        </div>
+        <!-- FILTERS -->
+        <div class="overflow-x-auto whitespace-nowrap" id="filters">
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2 active">All</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Nike</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Adidas</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Puma</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Asics</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Reebok</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">NewBalance</span>
+            <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Converse</span>
+        </div>
+        <!-- PRODUCTS -->
+        <div class="grid-container grid grid-cols-2 gap-y-5 gap-x-10 my-10" id="products"></div>
+        <!-- NAVIGATION MENU -->
+        <footer class="flex justify-around items-center w-full fixed bottom-0 left-0 bg-white py-3" id="nav-bar">
+            <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="home">
+                <i class="bi bi-house-door-fill"></i>
+                <!-- <i class="bi bi-house-door"></i> -->
+                <span>Home</span>
+            </span>
+            <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="cart">
+                <i class="bi bi-bag"></i>
+                <!-- <i class="bi bi-bag-fill"></i> -->
+                <span>Cart</span>
+            </span>
+            <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="orders">
+                <i class="bi bi-cart"></i>
+                <!-- <i class="bi bi-cart-fill"></i> -->
+                <span>Orders</span>
+            </span>
+            <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="wallet">
+                <i class="bi bi-wallet"></i>
+                <!-- <i class="bi bi-wallet-fill"></i> -->
+                <span>Wallet</span>
+            </span>
+            <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="profile">
+                <i class="bi bi-person"></i>
+                <!-- <i class="bi bi-person-fill"></i> -->
+                <span>Profile</span>
+            </span>
+        </footer>
+    </body>
+
+</html>

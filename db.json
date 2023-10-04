@@ -1,19 +1,74 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "ghazal@hello.com",
+      "password": "hello",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Universe",
+      "id": 1
+    },
+    {
+      "email": "ghazal@salam.com",
+      "password": "salam",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Money",
+      "id": 2
+    },
+    {
+      "email": "ghazal@ghazal.com",
+      "password": "ghazal",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Deeper",
+      "id": 3
+    },
+    {
+      "email": "ghazal@ghazal.com",
+      "password": "ghazal",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Sickly",
+      "id": 4
     }
   ],
-  "comments": [
+  "shoes": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 2,
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 3,
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 4,
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 5,
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 6,
+      "name": "K-SWISS Men's X Lite",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

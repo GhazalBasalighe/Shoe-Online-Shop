@@ -7,31 +7,32 @@
         <title>Login Page</title>
         <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="../styles/output.css">
-        <script defer src="../utils/login.js"></script>
+        <script defer type="module" src="../utils/login.js"></script>
+        <script defer type="module" src="../utils/randomNames.js"></script>
     </head>
 
     <body class="font-inter">
         <header>
-            <img src="../assets/images/arrow-back.png" alt="back" class="back-arrow cursor-pointer">
+            <img src="../assets/icons/arrow-back.png" alt="back" class="back-arrow cursor-pointer">
         </header>
         <main class="flex flex-col justify-center items-center gap-28 h-loginMain px-4">
             <img src="../assets/images/logo-black.png" alt="logo">
             <section class="login-section flex flex-col gap-10">
                 <h1 class="text-3xl font-semibold">Login to Your Account</h1>
-                <form class="login-section flex flex-col gap-4">
+                <form class="login-section flex flex-col gap-4" id="login-form">
                     <!-- EMAIL -->
                     <div class="relative">
                         <input type="email" name="email" id="email" placeholder="Email"
                             class="bg-[#FAFAFA] py-2 pl-6 w-full">
-                        <img src="../assets/images/email.png" alt="email" width="14px"
+                        <img src="../assets/icons/email.png" alt="email" width="14px"
                             class="absolute bottom-[13px] left-1">
                     </div>
                     <!-- PASSWORD -->
                     <div class="relative">
                         <input type="password" name="password" id="password" placeholder="Password"
                             class="bg-[#FAFAFA] py-2 pl-6 w-full">
-                        <img src="../assets/images/password.png" alt="password" class="absolute bottom-[13px] left-1">
-                        <img src="../assets/images/eye.png" alt="show password"
+                        <img src="../assets/icons/password.png" alt="password" class="absolute bottom-[13px] left-1">
+                        <img src="../assets/icons/eye.png" alt="show password"
                             class="show-password cursor-pointer absolute bottom-[13px] right-[10px]">
                     </div>
                     <div class="flex justify-center gap-2 mt-6">
