@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
 filterContainer.addEventListener("click", (e) => {
   //adding active class ui
   if (e.target.classList.contains("filter")) {
+    //redirect to products page
+    const text = e.target.textContent;
+    const newUrl = `http://127.0.0.1:5500/FrontEnd/views/products.html?filter=${text}`;
+    location.assign(newUrl);
     const filters = filterContainer.querySelectorAll(".filter");
     filters.forEach((filter) => {
       filter.classList.remove("active");
