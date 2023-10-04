@@ -1,6 +1,7 @@
 const loadMore = document.querySelector("#more");
 const categoryContainer = document.querySelector("#categories");
 const filterContainer = document.querySelector("#filters");
+import generateProducts from "./generateProducts.js";
 
 const data = [
   {
@@ -46,24 +47,6 @@ loadMore.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   generateProducts();
 });
-
-const productContainer = document.querySelector("#products");
-async function generateProducts() {
-  const request = await fetch("http://localhost:3000/shoes");
-  const shoes = await request.json();
-  shoes.forEach((shoe) => {
-    const newShoe = `
-    <div class="grid-item card border-0 rounded-lg">
-                <img src="${shoe.profile}" alt="Shoe" class="card-img-top bg-[#F3F3F3] rounded-xl">
-                <div class="card-body p-0">
-                    <div class="card-title truncate text-base font-bold mb-0 mt-2">${shoe.name}</div>
-                    <div class="card-text font-semibold text-sm">$ ${shoe.price}.00</div>
-                </div>
-            </div>
-    `;
-    productContainer.insertAdjacentHTML("beforeend", newShoe);
-  });
-}
 
 //------ACTIVE FILTER-------
 filterContainer.addEventListener("click", (e) => {
@@ -139,3 +122,5 @@ function addFilledIcons(e) {
     }
   }
 }
+
+//------SET QUERY PARAMS-------

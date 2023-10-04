@@ -4,7 +4,7 @@ const password = document.querySelector("#password");
 const formElem = document.querySelector("#login-form");
 
 let submitOk = false;
-
+document.addEventListener("DOMContentLoaded", autoFill);
 // -----------SHOW/HIDE PASSWORD------------
 passwordToggle.addEventListener("click", () => {
   if (password.type === "password") {
@@ -15,7 +15,7 @@ passwordToggle.addEventListener("click", () => {
 });
 
 password.addEventListener("input", buttonToggle);
-email.addEventListener("input", autoFill);
+email.addEventListener("input", buttonToggle);
 //oninput event occurs immediately after the value of an element has changed
 //while onchange occurs when the element loses focus, after the content has been changed
 
@@ -36,33 +36,29 @@ function buttonToggle() {
 }
 // -----------AUTOFILL------------
 async function autoFill() {
-  // Get the entered email from the email input field
-  const enteredEmail = email.value.trim();
-
-  if (enteredEmail !== "") {
-    try {
-      // Make a GET request to fetch user data by email
-      const request = await fetch(
-        `http://localhost:3000/users?email=${enteredEmail}`
-      );
+  try {
+    const userId = localStorage.getItem("userId");
+    const checkbox = document.querySelector("#rememberMe");
+    if (userId) {
+      // Make a GET request to retrieve user data based on the stored user ID
+      const request = await fetch(`http://localhost:3000/users/${userId}`);
       const userData = await request.json();
-
-      // Check if a user with the entered email was found
-      if (Array.isArray(userData) && userData.length > 0) {
-        // Autofill the password field with the retrieved password
-        password.value = userData[0].password;
+      // Autofill both email and password fields
+      if (userData.rememberMe) {
+        email.value = userData.email;
+        password.value = userData.password;
+        checkbox.checked = true;
+        buttonToggle();
       } else {
-        // Clear the password field if no user was found
+        // Clear both fields if no user ID is found in local storage
+        email.value = "";
         password.value = "";
+        checkbox.checked = false;
       }
-    } catch (error) {
-      console.error("Error fetching user data:", error);
     }
-  } else {
-    // Clear the password field if the email is empty
-    password.value = "";
+  } catch (error) {
+    console.error("Error fetching user data:", error);
   }
-  buttonToggle();
 }
 
 // -----------AUTOFILL USING COOKIES------------
@@ -122,7 +118,6 @@ signInBtn.addEventListener("click", (e) => {
 // -----------EMAIL VALIDATION------------
 function ValidateEmail() {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-    window.location.href = "../views/homePage.html";
     sendData();
     return true;
   }
@@ -136,6 +131,7 @@ async function sendData() {
   const newUser = Object.fromEntries(new FormData(formElem).entries());
   newUser.profile = "../assets/images/profilePic.png";
   newUser.name = await randomNameGenerator();
+
   try {
     const response = await fetch("http://localhost:3000/users", {
       method: "POST",
@@ -146,12 +142,12 @@ async function sendData() {
       body: JSON.stringify(newUser),
     });
 
-    // Check if the user data was successfully added to the server
     if (response.ok) {
-      // If the "Remember Me" checkbox is checked, set the email and password cookies
-      // if (checkbox.checked) {
-      //   setCookie(email.value, password.value, 30); // 30 days expiration
-      // }
+      const responseData = await response.json();
+
+      // Store the user ID in local storage
+      localStorage.setItem("userId", responseData.id);
+
       window.location.href = "../views/homePage.html";
     } else {
       console.error("Failed to add user data to the server.");

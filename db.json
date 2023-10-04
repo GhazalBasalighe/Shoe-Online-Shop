@@ -31,6 +31,68 @@
       "profile": "../assets/images/profilePic.png",
       "name": "Sickly",
       "id": 4
+    },
+    {
+      "email": "test@test.com",
+      "password": "1234",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Trap",
+      "id": 5
+    },
+    {
+      "email": "aa@frfs.com",
+      "password": "111",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Trooper",
+      "id": 6
+    },
+    {
+      "email": "wesafd@slfvn.con",
+      "password": "2121221",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Game",
+      "id": 7
+    },
+    {
+      "email": "2311@sdlkvcns.com",
+      "password": "111",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Two",
+      "id": 8
+    },
+    {
+      "email": "2311@sdlkvcns.com",
+      "password": "111",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Kitty",
+      "id": 9
+    },
+    {
+      "email": "1111@lfcficnl.com",
+      "password": "11111111",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Two",
+      "id": 10
+    },
+    {
+      "email": "ghazallllll@ksjvb.com",
+      "password": "21212",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Future",
+      "id": 11
+    },
+    {
+      "email": "ghazallllll@ksjvb.com",
+      "password": "21212",
+      "rememberMe": "on",
+      "profile": "../assets/images/profilePic.png",
+      "name": "Morrow",
+      "id": 12
     }
   ],
   "shoes": [

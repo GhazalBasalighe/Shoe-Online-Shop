@@ -1,3 +1,3 @@
 setTimeout(() => {
-  window.location.href = "../views/slideShow.html";
+  window.location.href = "../views/walkthrough.html";
 }, 3000);

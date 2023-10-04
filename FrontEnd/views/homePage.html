@@ -22,10 +22,9 @@
                 height: auto;
             }
 
-            .card-img,
-            .card-img-top {
-                border-top-left-radius: 0.75rem;
-                border-top-right-radius: 0.75rem;
+            .img-container {
+                background-color: #f3f3f3;
+                border-radius: 10px;
             }
 
             .active {
@@ -34,10 +33,11 @@
             }
         </style>
         <!-- CUSTOM SCRIPT -->
-        <script src="../utils/homePage.js" defer></script>
+        <script type="module" src="../utils/homePage.js" defer></script>
+        <script type="module" defer src="../utils/generateProducts.js"></script>
+
         <!-- JQUERY CDN -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     </head>
 
     <body class="font-inter px-6 py-4">
@@ -54,15 +54,15 @@
                     </div>
                 </div>
                 <div class="flex justify-center items-center gap-2">
-                    <img src="../assets/icons/bell.png" alt="let me know">
-                    <img src="../assets/icons/heart.png" alt="favorite">
+                    <i class="bi bi-bell"></i>
+                    <i class="bi bi-suit-heart"></i>
                 </div>
             </div>
         </div>
         <!-- SEARCH -->
         <div class=" relative my-4">
             <input type="search" name="search" id="search" placeholder="Search" class="bg-[#FAFAFA] py-2 pl-6 w-full">
-            <img src="../assets/icons/search.png" alt="search" class="absolute bottom-3 left-1">
+            <i class="bi bi-search absolute bottom-2 left-1"></i>
         </div>
         <!-- CATEGORIES -->
         <div class="grid-container grid grid-cols-4 gap-4 mb-4" id="categories">
@@ -118,7 +118,7 @@
         <!-- MOST POPULAR AND SEE ALL -->
         <div class="flex justify-between font-semibold mb-3">
             <span class="text-xl">Most Popular</span>
-            <a class="text-base text-decoration-none text-[#000] hover:text-[#000]" href="">See All</a>
+            <a class="text-base text-decoration-none text-[#000] hover:text-[#000]" href="./products.html">See All</a>
         </div>
         <!-- FILTERS -->
         <div class="overflow-x-auto whitespace-nowrap" id="filters">
@@ -132,9 +132,9 @@
             <span class="filter rounded-full border-2 inline-block px-4 py-1 mr-2">Converse</span>
         </div>
         <!-- PRODUCTS -->
-        <div class="grid-container grid grid-cols-2 gap-y-5 gap-x-10 my-10" id="products"></div>
+        <div class="grid-container grid grid-cols-2 gap-y-5 gap-x-10 mb-5 mt-3" id="products"></div>
         <!-- NAVIGATION MENU -->
-        <footer class="flex justify-around items-center w-full fixed bottom-0 left-0 bg-white py-3" id="nav-bar">
+        <footer class="flex justify-around items-center w-full fixed bottom-0 left-0 bg-white py-2" id="nav-bar">
             <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="home">
                 <i class="bi bi-house-door-fill"></i>
                 <!-- <i class="bi bi-house-door"></i> -->

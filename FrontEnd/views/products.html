@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+        <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../styles/output.css">
+        <script type="module" defer src="../utils/products.js"></script>
+        <script type="module" defer src="../utils/generateProducts.js"></script>
+        <!-- BOOTSTRAP CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+            .img-container {
+                background-color: #f3f3f3;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body class="font-inter px-6 py-4">
+        <header class="flex items-center font-semibold text-xl gap-2">
+            <a href="./homePage.html"><img src="../assets/icons/arrow-back.png" alt="back"></a>
+            <span id="filter-name">See All</span>
+        </header>
+        <div class="grid-container grid grid-cols-2 gap-y-5 gap-x-10 mt-3" id="products"></div>
+    </body>
+
+</html>
