@@ -1,7 +1,8 @@
 const loadMore = document.querySelector("#more");
 const categoryContainer = document.querySelector("#categories");
 const filterContainer = document.querySelector("#filters");
-import generateProducts from "./generateProducts.js";
+import generateProducts from "./generateProducts.mjs";
+import redirectDetails from "./redirect.mjs";
 
 const data = [
   {
@@ -44,9 +45,7 @@ loadMore.addEventListener("click", () => {
 });
 
 //------ADDING PRODUCT CARDS-------
-document.addEventListener("DOMContentLoaded", () => {
-  generateProducts();
-});
+await generateProducts();
 
 //------ACTIVE FILTER-------
 filterContainer.addEventListener("click", (e) => {
@@ -127,4 +126,9 @@ function addFilledIcons(e) {
   }
 }
 
-//------SET QUERY PARAMS-------
+//------PRODUCT DETAILS REDIRECT-------
+const productsContainer = document.querySelector("#products");
+productsContainer.addEventListener("click", redirectDetails());
+
+const productsURL = "http://127.0.0.1:5500/FrontEnd/views/products.html";
+categoryContainer.addEventListener("click", redirectDetails(productsURL));

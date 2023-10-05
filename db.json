@@ -104,31 +104,49 @@
     },
     {
       "id": 2,
-      "name": "K-SWISS Men's X Lite",
+      "name": "Air Jordan 3 Retro",
       "price": 85,
       "profile": "../assets/images/Shoe(hardcode).png"
     },
     {
       "id": 3,
-      "name": "K-SWISS Men's X Lite",
+      "name": "Nike React Infinity",
       "price": 85,
       "profile": "../assets/images/Shoe(hardcode).png"
     },
     {
       "id": 4,
-      "name": "K-SWISS Men's X Lite",
+      "name": "Adidas Ultraboost 23/Ultraboost Light",
       "price": 85,
       "profile": "../assets/images/Shoe(hardcode).png"
     },
     {
       "id": 5,
-      "name": "K-SWISS Men's X Lite",
+      "name": "Adidas Lite Racer Adapt 5.0 Shoes",
       "price": 85,
       "profile": "../assets/images/Shoe(hardcode).png"
     },
     {
       "id": 6,
-      "name": "K-SWISS Men's X Lite",
+      "name": "Reebok Floatride Energy Symmetros",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 7,
+      "name": "Skechers Equalizer",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 8,
+      "name": "Skechers Dynamight",
+      "price": 85,
+      "profile": "../assets/images/Shoe(hardcode).png"
+    },
+    {
+      "id": 9,
+      "name": "Gucci Jordaan loafer ",
       "price": 85,
       "profile": "../assets/images/Shoe(hardcode).png"
     }
