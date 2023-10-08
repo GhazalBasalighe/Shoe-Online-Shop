@@ -1,5 +1,5 @@
-const productsURL = "http://127.0.0.1:5500/FrontEnd/views/products.html";
-const detailsURL = "http://127.0.0.1:5500/FrontEnd/views/details.html";
+const productsURL = "http://127.0.0.1:5500/views/products.html";
+const detailsURL = "http://127.0.0.1:5500/views/details.html";
 
 export default function redirectDetails(url = detailsURL) {
   return function (e) {

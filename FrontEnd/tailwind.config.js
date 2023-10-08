@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.{html,js}", "./utils/**/*.{js}"],
+  content: ["./views/**/*.{html,js}", "./utils/**/*.js"],
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -8,6 +8,7 @@ module.exports = {
     colors: {
       categoryBg: "#ECECEC",
       black: "#000",
+      fadedBlack: "#404040",
       white: "#fff",
       gray: "#f3f3f3",
       red: "rgb(220 38 38)",

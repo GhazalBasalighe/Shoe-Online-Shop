@@ -1,5 +1,5 @@
 import generateProducts from "./generateProducts.mjs";
-import redirectToDetails from "./redirect.mjs";
+import redirectDetails from "./redirect.mjs";
 import fetchData from "./request.mjs";
 
 setTitle();
@@ -31,6 +31,6 @@ async function filterProducts(text) {
 const productContainer = document.querySelector("#products");
 productContainer.addEventListener("click", (e) => {
   if (e.target.closest(".grid-item")) {
-    redirectToDetails(e);
+    redirectDetails(e);
   }
 });

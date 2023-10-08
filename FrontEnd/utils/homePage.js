@@ -3,6 +3,7 @@ const categoryContainer = document.querySelector("#categories");
 const filterContainer = document.querySelector("#filters");
 import generateProducts from "./generateProducts.mjs";
 import redirectDetails from "./redirect.mjs";
+import addFilledIcons from "./changeIcons.mjs";
 
 const data = [
   {
@@ -53,7 +54,7 @@ filterContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("filter")) {
     //redirect to products page
     const text = e.target.textContent;
-    const newUrl = `http://127.0.0.1:5500/FrontEnd/views/products.html?filter=${text}`;
+    const newUrl = `http://127.0.0.1:5500/views/products.html?filter=${text}`;
     location.assign(newUrl);
     const filters = filterContainer.querySelectorAll(".filter");
     filters.forEach((filter) => {
@@ -67,68 +68,18 @@ filterContainer.addEventListener("click", (e) => {
 
 //------ACTIVE NAVBAR SECTION-------
 const navBar = document.querySelector("#nav-bar");
-const navItems = navBar.querySelectorAll(".nav-item");
-
 navBar.addEventListener("click", addFilledIcons);
-
-function addFilledIcons(e) {
-  const targetNavItem = e.target.closest(".nav-item");
-
-  if (targetNavItem) {
-    // Loop through all navigation items and reset their icons to normal state
-    navItems.forEach((navItem) => {
-      const icon = navItem.querySelector("i");
-      if (icon) {
-        const behavior = navItem.getAttribute("data-behavior");
-        switch (behavior) {
-          case "home":
-            $(icon)
-              .removeClass("bi-house-door-fill")
-              .addClass("bi-house-door");
-            break;
-          case "cart":
-            $(icon).removeClass("bi-bag-fill").addClass("bi-bag");
-            break;
-          case "orders":
-            $(icon).removeClass("bi-cart-fill").addClass("bi-cart");
-            break;
-          case "wallet":
-            $(icon).removeClass("bi-wallet-fill").addClass("bi-wallet");
-            break;
-          case "profile":
-            $(icon).removeClass("bi-person-fill").addClass("bi-person");
-            break;
-        }
-      }
-    });
-
-    const behavior = targetNavItem.getAttribute("data-behavior");
-    const icon = targetNavItem.querySelector("i");
-    if (icon) {
-      switch (behavior) {
-        case "home":
-          $(icon).toggleClass("bi-house-door-fill bi-house-door");
-          break;
-        case "cart":
-          $(icon).toggleClass("bi-bag-fill bi-bag");
-          break;
-        case "orders":
-          $(icon).toggleClass("bi-cart-fill bi-cart");
-          break;
-        case "wallet":
-          $(icon).toggleClass("bi-wallet-fill bi-wallet");
-          break;
-        case "profile":
-          $(icon).toggleClass("bi-person-fill bi-person");
-          break;
-      }
-    }
-  }
-}
 
 //------PRODUCT DETAILS REDIRECT-------
 const productsContainer = document.querySelector("#products");
 productsContainer.addEventListener("click", redirectDetails());
 
-const productsURL = "http://127.0.0.1:5500/FrontEnd/views/products.html";
+const productsURL = "http://127.0.0.1:5500/views/products.html";
 categoryContainer.addEventListener("click", redirectDetails(productsURL));
+
+//------SEARCH BAR REDIRECT-------
+const searchBar = document.querySelector("#search");
+searchBar.addEventListener(
+  "focus",
+  () => (window.location.href = "../views/search.html")
+);
