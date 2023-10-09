@@ -2,7 +2,6 @@ const navBar = document.querySelector("#nav-bar");
 const navItems = navBar.querySelectorAll(".nav-item");
 export default function addFilledIcons(e) {
   const targetNavItem = e.target.closest(".nav-item");
-
   if (targetNavItem) {
     // Loop through all navigation items and reset their icons to normal state
     navItems.forEach((navItem) => {
@@ -45,6 +44,7 @@ export default function addFilledIcons(e) {
           break;
         case "orders":
           $(icon).toggleClass("bi-cart-fill bi-cart");
+          window.location.href = "../views/myOrders.html";
           break;
         case "wallet":
           $(icon).toggleClass("bi-wallet-fill bi-wallet");

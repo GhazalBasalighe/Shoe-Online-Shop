@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="home">
 
     <head>
         <meta charset="UTF-8">
@@ -30,8 +30,9 @@
                 <a href="./homePage.html"><img src="../assets/images/logo-black.png" alt="logo" width="12"></a>
                 <span>My Cart</span>
             </div>
-            <div>
-                <i class="bi bi-search cursor-pointer" id="search-icon"></i>
+            <div class="flex gap-3">
+                <i class="bi bi-search cursor-pointer" id="search"></i>
+                <i class="bi bi-three-dots hidden"></i>
             </div>
         </header>
         <!-- ORDERS CARD CONTAINER -->
@@ -80,54 +81,49 @@
                     </div>
                 </div>
             </div>
-            <!-- FOOTER -->
-            <footer class="fixed left-0 right-0 bottom-0 px-6 py-4">
-                <div class="flex justify-between items-center gap-6 box-border w-full bottom-16 left-0 bg-white py-2">
-                    <div class="price flex flex-col">
-                        <span class="text-xs text-fadedBlack">Total price</span>
-                        <span id="total-price" class="text-2xl font-bold">$585.00</span>
-                    </div>
-                    <button class="bg-black rounded-full py-2 px-4 w-[90%] flex items-center justify-center gap-3"
-                        id="cart-btn">
-                        <span class="text-white text-sm font-semibold">Checkout</span>
-                        <i class="bi bi-arrow-right-short text-white text-2xl"></i>
-                    </button>
+        </div>
+        <!-- FOOTER -->
+        <footer class="fixed left-0 right-0 bottom-0 px-6 py-2">
+            <div class="flex justify-between items-center gap-6 box-border w-full bottom-16 left-0 bg-white">
+                <div class="price flex flex-col">
+                    <span class="text-xs text-fadedBlack">Total price</span>
+                    <span id="total-price" class="text-2xl font-bold">$585.00</span>
                 </div>
-                <!-- NAVIGATION MENU -->
-                <div class="flex justify-around items-center box-border w-full bottom-0 left-0 bg-white py-2"
-                    id="nav-bar">
-                    <span class="nav-item flex flex-col items-center justify-center cursor-pointer"
-                        data-behavior="home">
-                        <i class="bi bi-house-door"></i>
-                        <!-- <i class="bi bi-house-door-fill"></i> -->
-                        <span>Home</span>
-                    </span>
-                    <span class="nav-item flex flex-col items-center justify-center cursor-pointer"
-                        data-behavior="cart">
-                        <i class="bi bi-bag-fill"></i>
-                        <!-- <i class="bi bi-bag"></i> -->
-                        <span>Cart</span>
-                    </span>
-                    <span class="nav-item flex flex-col items-center justify-center cursor-pointer"
-                        data-behavior="orders">
-                        <i class="bi bi-cart"></i>
-                        <!-- <i class="bi bi-cart-fill"></i> -->
-                        <span>Orders</span>
-                    </span>
-                    <span class="nav-item flex flex-col items-center justify-center cursor-pointer"
-                        data-behavior="wallet">
-                        <i class="bi bi-wallet"></i>
-                        <!-- <i class="bi bi-wallet-fill"></i> -->
-                        <span>Wallet</span>
-                    </span>
-                    <span class="nav-item flex flex-col items-center justify-center cursor-pointer"
-                        data-behavior="profile">
-                        <i class="bi bi-person"></i>
-                        <!-- <i class="bi bi-person-fill"></i> -->
-                        <span>Profile</span>
-                    </span>
-                </div>
-            </footer>
+                <button class="bg-black rounded-full py-2 px-4 w-[90%] flex items-center justify-center gap-3"
+                    id="cart-btn">
+                    <span class="text-white text-sm font-semibold">Checkout</span>
+                    <i class="bi bi-arrow-right-short text-white text-2xl"></i>
+                </button>
+            </div>
+            <!-- NAVIGATION MENU -->
+            <div class="flex justify-around items-center box-border w-full bottom-0 left-0 bg-white py-2" id="nav-bar">
+                <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="home">
+                    <i class="bi bi-house-door"></i>
+                    <!-- <i class="bi bi-house-door-fill"></i> -->
+                    <span>Home</span>
+                </span>
+                <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="cart">
+                    <i class="bi bi-bag-fill"></i>
+                    <!-- <i class="bi bi-bag"></i> -->
+                    <span>Cart</span>
+                </span>
+                <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="orders">
+                    <i class="bi bi-cart"></i>
+                    <!-- <i class="bi bi-cart-fill"></i> -->
+                    <span>Orders</span>
+                </span>
+                <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="wallet">
+                    <i class="bi bi-wallet"></i>
+                    <!-- <i class="bi bi-wallet-fill"></i> -->
+                    <span>Wallet</span>
+                </span>
+                <span class="nav-item flex flex-col items-center justify-center cursor-pointer" data-behavior="profile">
+                    <i class="bi bi-person"></i>
+                    <!-- <i class="bi bi-person-fill"></i> -->
+                    <span>Profile</span>
+                </span>
+            </div>
+        </footer>
     </body>
 
 </html>

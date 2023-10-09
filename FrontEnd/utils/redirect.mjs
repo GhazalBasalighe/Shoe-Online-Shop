@@ -18,3 +18,11 @@ export default function redirectDetails(url = detailsURL) {
     }
   };
 }
+
+export function redirectSearchPage(event = "click") {
+  const searchBar = document.querySelector("#search");
+  searchBar.addEventListener(
+    event,
+    () => (window.location.href = "../views/search.html")
+  );
+}

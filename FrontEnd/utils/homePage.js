@@ -2,7 +2,7 @@ const loadMore = document.querySelector("#more");
 const categoryContainer = document.querySelector("#categories");
 const filterContainer = document.querySelector("#filters");
 import generateProducts from "./generateProducts.mjs";
-import redirectDetails from "./redirect.mjs";
+import redirectDetails, { redirectSearchPage } from "./redirect.mjs";
 import addFilledIcons from "./changeIcons.mjs";
 
 const data = [
@@ -78,8 +78,4 @@ const productsURL = "http://127.0.0.1:5500/views/products.html";
 categoryContainer.addEventListener("click", redirectDetails(productsURL));
 
 //------SEARCH BAR REDIRECT-------
-const searchBar = document.querySelector("#search");
-searchBar.addEventListener(
-  "focus",
-  () => (window.location.href = "../views/search.html")
-);
+redirectSearchPage("focus");
