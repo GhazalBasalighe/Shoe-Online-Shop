@@ -1,5 +1,6 @@
 const productsURL = "http://127.0.0.1:5500/views/products.html";
 const detailsURL = "http://127.0.0.1:5500/views/details.html";
+const shippingURL = "http://127.0.0.1:5500/views/shippingDetails.html?";
 
 export default function redirectDetails(url = detailsURL) {
   return function (e) {
@@ -25,4 +26,9 @@ export function redirectSearchPage(event = "click") {
     event,
     () => (window.location.href = "../views/search.html")
   );
+}
+
+export function redirectShippingPage(status) {
+  const url = `${shippingURL}status=${status}`;
+  location.assign(url);
 }

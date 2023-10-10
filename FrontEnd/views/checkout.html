@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout</title>
+        <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../styles/output.css">
+        <script defer type="module" src="../utils/checkout.js"></script>
+
+        <!-- BOOTSTRAP ICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+
+    <body class="font-inter px-6 py-4">
+        <!-- HEADER -->
+        <header class="flex items-center justify-between text-xl">
+            <div class="flex items-center font-semibold text-xl gap-3">
+                <a href="./homePage.html"><img src="../assets/icons/arrow-back.png" alt="logo"></a>
+                <span>Checkout</span>
+            </div>
+            <div class="flex gap-3">
+                <i class="bi bi-three-dots"></i>
+            </div>
+        </header>
+        <!-- MAIN -->
+        <section class="border-b-2 border-gray mt-5 pb-5">
+            <h3 class="font-semibold text-lg">Shipping Address</h3>
+            <div class="flex justify-between items-center bg-white shadow-sm rounded-md">
+                <div class="flex items-center justify-between gap-2">
+                    <span class="address bg-[#ccc] inline-flex p-2 rounded-full my-3">
+                        <i class="bi bi-geo-alt-fill bg-black text-white p-2 rounded-full inline-flex"></i>
+                    </span>
+                    <div class="flex flex-col">
+                        <span class="font-bold">Home</span>
+                        <span class="text-fadedBlack text-xs">61480 SunBrook Park,PC 5679</span>
+                    </div>
+                </div>
+                <i class="bi bi-pencil-fill cursor-pointer" id="edit-address"></i>
+            </div>
+        </section>
+        <section class="border-b-2 border-gray mt-5 pb-5">
+            <h3 class="font-semibold text-lg">Order List</h3>
+            <div class="grid-container grid grid-cols-1 gap-y-5 gap-x-10 mb-5 mt-3" id="orders">
+                <div class="grid-item rounded-xl shadow-xl bg-white cursor-pointer flex gap-3 p-2" data-id=${shoe.id}>
+                    <div class="left-side bg-gray rounded-xl inline-flex items-center w-1/3"><img
+                            src="../assets/images/Shoe(hardcode)2.png" alt="Shoe">
+                    </div>
+                    <div class="right-side flex flex-col items-center justify-between gap-3 w-2/3">
+                        <!-- NAME -->
+                        <div class="flex items-center justify-between w-full">
+                            <div class="truncate text-base font-bold">Air Jordan 3 Retro</div>
+                            <i class="bi bi-trash"></i>
+                        </div>
+                        <!-- COLOR AND SIZE -->
+                        <div class="flex justify-center items-center self-start text-sm">
+                            <!-- COLOR -->
+                            <div>
+                                <span
+                                    class="w-4 h-4 text-center rounded-full inline-block align-middle bg-fadedBlack"></span>
+                                <span class="text-fadedBlack border-r border-fadedBlack pr-2">Black</span>
+                            </div>
+                            <!-- SIZE -->
+                            <div>
+                                <span class="text-fadedBlack pl-2">Size=42</span>
+                            </div>
+                        </div>
+                        <!-- QUANTITY AND PRICE -->
+                        <div class="flex justify-between items-center w-full">
+                            <span class="font-bold" id="total-price">$105.00</span>
+                            <div class="quantity flex items-center gap-2 box-border">
+                                <div class="flex items-center rounded-full bg-gray box-border">
+                                    <button id="decreaseBtn"
+                                        class="px-1 py-1 text-black rounded-l focus:outline-none text-xl">
+                                        <i class="bi bi-dash"></i>
+                                    </button>
+                                    <input id="quantityInput" type="number"
+                                        class="w-8 px-1 py-1 text-center bg-gray focus:outline-none" value="1" min="1"
+                                        max="10">
+                                    <button id="increaseBtn"
+                                        class="px-1 py-1 text-black rounded-r focus:outline-none text-xl">
+                                        <i class="bi bi-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="border-b-2 border-gray mt-5 pb-5">
+            <h3 class="font-semibold text-lg">Choose Shipping</h3>
+            <div class="flex justify-between items-center bg-white shadow-sm rounded-md py-5">
+                <div class="flex gap-2">
+                    <i class="bi bi-truck"></i>
+                    <span>Choose Shipping Type</span>
+                </div>
+                <i class="bi bi-chevron-right cursor-pointer" id="shipping"></i>
+            </div>
+        </section>
+        <section class="border-b-2 border-gray mt-5 pb-5">
+            <h3 class="font-semibold text-lg">Promo Code</h3>
+            <div class="my-4 flex justify-center items-center gap-5">
+                <input type="search" name="search" id="search" placeholder="Enter Promo Code"
+                    class=" outline-none bg-[#FAFAFA] pl-2 py-3 rounded-lg w-9/12">
+                <i
+                    class="bi bi-plus text-white bg-black w-3/12 inline-flex justify-center items-center max-w-max p-4 rounded-full cursor-pointer"></i>
+            </div>
+            <div class="shadow-lg p-5 text-fadedBlack text-sm">
+                <div class=" border-b-2 border-gray flex flex-col gap-3 pb-3 mb-3">
+                    <div class="flex justify-between items-center">
+                        <span>Amount</span>
+                        <span>$800.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>Shipping</span>
+                        <span>-</span>
+                    </div>
+
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Total</span>
+                    <span>-</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <button id="payment"
+            class="bg-black text-sm font-semibold mx-auto w-full py-3 px-6 rounded-3xl gap-3 flex items-center justify-center">
+            <span class="text-white">Continue to Payment</span>
+            <i class="bi bi-arrow-right cursor-pointer text-white"></i>
+        </button>
+
+    </body>
+
+</html>
