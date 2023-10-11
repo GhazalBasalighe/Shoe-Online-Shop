@@ -11,6 +11,7 @@ const searchInput = document.querySelector("#search");
 
 let searchMode = false; //something like React IG? IDK T.T
 let filteredArrLen = 0; //to save filtered products array length
+let isSearchListInteracted = false;
 
 //------SEND SEARCH QUERIES TO DB------
 searchInput.addEventListener("keydown", async (e) => {
@@ -85,17 +86,27 @@ searchInput.addEventListener("focus", () => {
   searchList.classList.add("visible");
 });
 searchInput.addEventListener("blur", () => {
-  searchList.classList.remove("visible");
-  searchMode = true;
+  if (!isSearchListInteracted) {
+    searchList.classList.remove("visible");
+    searchMode = true;
+  }
 });
 
+//keep search list visible until interaction is over
+searchList.addEventListener("mouseenter", () => {
+  isSearchListInteracted = true;
+});
+
+searchList.addEventListener("mouseleave", () => {
+  isSearchListInteracted = false;
+});
 //--GENERATE SEARCH HISTORY ELEMENTS--
 async function addSearchList() {
   const searchHistory = await fetchHistory();
   searchHistory.forEach((li) => {
     const newLi = `
-     <div class="flex justify-between items-center">
-                    <span class="truncate text-fadedBlack">${li.text}</span>
+     <div class="flex justify-between items-center" data-id=${li.id}>
+                    <span class="truncate text-fadedBlack search-text">${li.text}</span>
                     <i class="bi bi-x-square cursor-pointer"></i>
                 </div>
     `;
@@ -162,5 +173,24 @@ async function clearAll() {
 }
 
 //-------REDIRECT TO DETAILS-------
-
 productContainer.addEventListener("click", redirectDetails());
+
+//-------DELETE SEARCH HISTORY 1 by 1-------
+searchList.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("bi-x-square")) {
+    const parent = e.target.closest("div");
+    const itemId = parent.dataset.id;
+    parent.remove();
+    try {
+      await fetch(`http://localhost:3000/search-history/${itemId}`, {
+        method: "DELETE",
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  if (e.target.classList.contains("search-text")) {
+    const parent = e.target.closest("div");
+    searchInput.value = e.target.textContent;
+  }
+});
