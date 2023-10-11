@@ -12,5 +12,12 @@ async function fetchHistory(query = "") {
   return search;
 }
 
+const cartEndPoint = "http://localhost:3000/cart";
+async function fetchCart(query = "") {
+  const cart = await fetch(`${cartEndPoint}/${query}`);
+  const search = await cart.json();
+  return search;
+}
+
 export default fetchData;
-export { fetchHistory };
+export { fetchHistory, fetchCart };

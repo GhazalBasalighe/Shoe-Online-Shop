@@ -8,12 +8,10 @@ quantityInput.addEventListener("input", () => {
   handleQuantityChange();
 });
 
-//---------
-export default function handleQuantityChange() {
+export default function handleQuantityChange(status = true) {
   const quantity = quantityInput.value;
   const urlSearchParams = new URLSearchParams(window.location.search);
   const filterParam = +urlSearchParams.get("id");
-
   // Fetch shoe data based on the filterParam
   fetchData(`?id=${filterParam}`).then((shoeData) => {
     if (shoeData && shoeData.length > 0) {
