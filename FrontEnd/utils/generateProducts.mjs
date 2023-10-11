@@ -155,23 +155,23 @@ export async function generateOrdersProducts() {
                         <!-- COLOR -->
                         <div>
                             <span
-                                class="w-4 h-4 text-center rounded-full inline-block align-middle bg-fadedBlack"></span>
-                            <span class="text-fadedBlack text-xs border-r border-fadedBlack pr-1">Black</span>
+                                class="w-4 h-4 text-center rounded-full inline-block align-middle bg-${order.color}"></span>
+                            <span class="text-fadedBlack text-xs border-r border-fadedBlack pr-1">${order.color}</span>
                         </div>
                         <!-- SIZE -->
                         <div>
-                            <span class="text-fadedBlack text-xs pl-1  border-r border-fadedBlack pr-2">Size=42</span>
+                            <span class="text-fadedBlack text-xs pl-1  border-r border-fadedBlack pr-2">Size=${order.size}</span>
                         </div>
                         <!-- QTY -->
                         <div>
-                            <span class="text-fadedBlack text-xs pl-1">QTY = 1</span>
+                            <span class="text-fadedBlack text-xs pl-1">QTY = ${order.quantity}</span>
                         </div>
                     </div>
                     <!-- STATUS IN DELIVERY -->
                     <span class="bg-gray self-start text-xs py-1 px-2 rounded-lg">In Delivery</span>
                     <!-- BUTTON -->
                     <div class="flex justify-between items-center w-full">
-                        <span class="font-bold" id="total-price">$105.00</span>
+                        <span class="font-bold" id="total-price">${order.totalPrice}</span>
                         <button class="bg-black text-white text-sm px-2 py-1 rounded-3xl">Track Order</button>
                     </div>
                 </div>
