@@ -31,6 +31,6 @@ async function filterProducts(text) {
 const productContainer = document.querySelector("#products");
 productContainer.addEventListener("click", (e) => {
   if (e.target.closest(".grid-item")) {
-    redirectDetails(e);
+    redirectDetails()(e);
   }
 });
