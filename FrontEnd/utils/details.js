@@ -53,6 +53,7 @@ const postData = {
   shoeName,
   totalPrice,
   quantity,
+  status: "active",
 };
 
 //------COLORS SELECT--------

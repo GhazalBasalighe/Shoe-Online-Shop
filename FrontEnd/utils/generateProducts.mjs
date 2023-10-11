@@ -1,6 +1,7 @@
 import fetchData from "./request.mjs";
 import { fetchCart } from "./request.mjs";
 const shoes = await fetchData();
+const cart = await fetchCart();
 
 const productContainer = document.querySelector("#products");
 export default async function generateProducts(array = shoes) {
@@ -19,7 +20,6 @@ export default async function generateProducts(array = shoes) {
 }
 const cartContainer = document.querySelector("#orders");
 export async function generateCartProducts() {
-  const cart = await fetchCart();
   cart.forEach((cartItem) => {
     const newOrderItem = `
    <div class="grid-item rounded-xl shadow-xl bg-white cursor-pointer flex gap-3 p-2" data-id=${cartItem.id}>
@@ -135,4 +135,87 @@ export async function generateModals(id, totalPrice, quantity) {
             </div>
   `;
   document.body.insertAdjacentHTML("beforeend", newModal);
+}
+
+export async function generateOrdersProducts() {
+  cart.forEach((order) => {
+    const newOrderItem = `
+    <div class="grid-item rounded-xl shadow-xl bg-white cursor-pointer flex gap-3 p-2" data-id=${order.id}>
+                <div class="left-side bg-gray rounded-xl inline-flex items-center w-1/3"><img
+                        src="../assets/images/Shoe(hardcode)2.png" alt="Shoe">
+                </div>
+                <div class="right-side flex flex-col items-center justify-between gap-1 w-2/3">
+                    <!-- NAME -->
+                    <div class="flex items-center justify-between w-full">
+                        <div class="truncate text-base font-bold">Air Jordan 3 Retro</div>
+                        <i class="bi bi-trash"></i>
+                    </div>
+                    <!-- COLOR AND SIZE AND QTY-->
+                    <div class="flex justify-center items-center self-start text-sm">
+                        <!-- COLOR -->
+                        <div>
+                            <span
+                                class="w-4 h-4 text-center rounded-full inline-block align-middle bg-fadedBlack"></span>
+                            <span class="text-fadedBlack text-xs border-r border-fadedBlack pr-1">Black</span>
+                        </div>
+                        <!-- SIZE -->
+                        <div>
+                            <span class="text-fadedBlack text-xs pl-1  border-r border-fadedBlack pr-2">Size=42</span>
+                        </div>
+                        <!-- QTY -->
+                        <div>
+                            <span class="text-fadedBlack text-xs pl-1">QTY = 1</span>
+                        </div>
+                    </div>
+                    <!-- STATUS IN DELIVERY -->
+                    <span class="bg-gray self-start text-xs py-1 px-2 rounded-lg">In Delivery</span>
+                    <!-- BUTTON -->
+                    <div class="flex justify-between items-center w-full">
+                        <span class="font-bold" id="total-price">$105.00</span>
+                        <button class="bg-black text-white text-sm px-2 py-1 rounded-3xl">Track Order</button>
+                    </div>
+                </div>
+            </div>
+  `;
+    cartContainer.insertAdjacentHTML("beforeend", newOrderItem);
+  });
+}
+
+export async function generateCheckoutProducts() {
+  cart.forEach((cartItem) => {
+    const newOrderItem = `
+   <div class="grid-item rounded-xl shadow-xl bg-white cursor-pointer flex gap-3 p-2" data-id=${cartItem.id}>
+                <div class="left-side bg-gray rounded-xl inline-flex items-center w-1/3"><img
+                        src="../assets/images/Shoe(hardcode)2.png" alt="Shoe">
+                </div>
+                <div class="right-side flex flex-col items-center justify-between gap-3 w-2/3">
+                    <!-- NAME -->
+                    <div class="flex items-center justify-between w-full">
+                        <div class="truncate text-base font-bold name">${cartItem.shoeName}</div>
+                        <i class="bi bi-trash"></i>
+                    </div>
+                    <!-- COLOR AND SIZE -->
+                    <div class="flex justify-center items-center self-start text-sm">
+                        <!-- COLOR -->
+                        <div>
+                            <span
+                                class="w-4 h-4 text-center rounded-full inline-block align-middle bg-${cartItem.color}"></span>
+                            <span class="text-fadedBlack border-r border-fadedBlack pr-2">${cartItem.color}</span>
+                        </div>
+                        <!-- SIZE -->
+                        <div>
+                            <span class="text-fadedBlack pl-2">Size=${cartItem.size}</span>
+                        </div>
+                    </div>
+                    <!-- QUANTITY AND PRICE -->
+                    <div class="flex justify-between items-center w-full">
+                        <span class="font-bold total-price" id="total-price">${cartItem.totalPrice}</span>
+                        <span class="bg-gray inline-flex justify-center items-center p-3 rounded-full w-8 h-8">${cartItem.quantity}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  `;
+    cartContainer.insertAdjacentHTML("beforeend", newOrderItem);
+  });
 }

@@ -24,15 +24,29 @@
             </div>
         </header>
         <main id="main" class="flex flex-col gap-3 mt-4">
-            <!-- 4 address or 4 shipping ways -->
+            <div id="black-overlay" class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-20 hidden"></div>
+            <div
+                class="modal-overlay justify-center items-center fixed top-0 left-0 right-0 bottom-0 rounded-xl z-30 hidden">
+                <div class="modal bg-white p-4 rounded-md">
+                    <img src="../assets/images/orderSuccess.png" alt="order successful">
+                    <h5 class="text-center font-bold text-xl">Order Successful!</h5>
+                    <p class="text-center my-3">You have successfully made an order</p>
+                    <div class="buttons flex flex-col justify-center items-center gap-3">
+                        <button class="w-full mx-8 py-3 px-5 rounded-full bg-black text-white" id="view-order">View
+                            Order</button>
+                        <button class="w-full mx-8 py-3 px-5 rounded-full bg-gray">View E-Receipt</button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 4 address or 4 shipping ways -->
         </main>
         <!-- FOOTER -->
-        <a href="./checkout.html"><button id="confirm-btn"
-                class="bg-black text-sm font-semibold mx-auto w-4/5 py-3 px-6 rounded-3xl gap-3 text-center fixed bottom-5 left-0 right-0">
-                <span class="text-white">Apply</span>
-            </button>
-        </a>
+        <button id="confirm-btn"
+            class="bg-black text-sm font-semibold mx-auto w-4/5 py-3 px-6 rounded-3xl gap-3 text-center fixed bottom-5 left-0 right-0">
+            <span class="text-white">Apply</span>
+        </button>
+
     </body>
 
 </html>

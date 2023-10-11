@@ -25,81 +25,48 @@
             </div>
         </header>
         <!-- MAIN -->
-        <section class="border-b-2 border-gray mt-5 pb-5">
+        <!-- SHIPPING ADDRESS -->
+        <section class="border-b-2 border-gray mt-5 pb-5" id="section-1">
             <h3 class="font-semibold text-lg">Shipping Address</h3>
-            <div class="flex justify-between items-center bg-white shadow-sm rounded-md">
+            <div class="grid-item flex justify-between items-center bg-white shadow-md rounded-md p-2">
                 <div class="flex items-center justify-between gap-2">
                     <span class="address bg-[#ccc] inline-flex p-2 rounded-full my-3">
                         <i class="bi bi-geo-alt-fill bg-black text-white p-2 rounded-full inline-flex"></i>
                     </span>
                     <div class="flex flex-col">
-                        <span class="font-bold">Home</span>
-                        <span class="text-fadedBlack text-xs">61480 SunBrook Park,PC 5679</span>
+                        <span class="font-bold" id="title">Home</span>
+                        <span class="text-fadedBlack text-xs" id="details">61480 SunBrook Park,PC 5679</span>
                     </div>
                 </div>
                 <i class="bi bi-pencil-fill cursor-pointer" id="edit-address"></i>
             </div>
         </section>
-        <section class="border-b-2 border-gray mt-5 pb-5">
+        <!-- ORDER LIST -->
+        <section class="border-b-2 border-gray mt-5 pb-5" id="section-2">
             <h3 class="font-semibold text-lg">Order List</h3>
-            <div class="grid-container grid grid-cols-1 gap-y-5 gap-x-10 mb-5 mt-3" id="orders">
-                <div class="grid-item rounded-xl shadow-xl bg-white cursor-pointer flex gap-3 p-2" data-id=${shoe.id}>
-                    <div class="left-side bg-gray rounded-xl inline-flex items-center w-1/3"><img
-                            src="../assets/images/Shoe(hardcode)2.png" alt="Shoe">
+            <div class="grid-container grid grid-cols-1 gap-y-5 gap-x-10 mb-5 mt-3" id="orders"></div>
+        </section>
+        <!-- CHOOSE SHIPPING -->
+        <section class="border-b-2 border-gray mt-5 pb-5" id="section-3">
+            <h3 class="font-semibold text-lg mb-3">Choose Shipping</h3>
+            <div class="grid-item flex justify-between items-center bg-white shadow-md rounded-md p-2">
+                <div class="flex items-center justify-between gap-2">
+                    <span class=" text-white bg-black rounded-full p-4 inline-flex">
+                        <i class="bi bi-box-seam inline-flex"></i>
+                    </span>
+                    <div class="flex flex-col">
+                        <span class="font-bold" id="title">Economy</span>
+                        <span class="text-fadedBlack text-xs" id="details">Estimated Arrival, Dec 20-23</span>
                     </div>
-                    <div class="right-side flex flex-col items-center justify-between gap-3 w-2/3">
-                        <!-- NAME -->
-                        <div class="flex items-center justify-between w-full">
-                            <div class="truncate text-base font-bold">Air Jordan 3 Retro</div>
-                            <i class="bi bi-trash"></i>
-                        </div>
-                        <!-- COLOR AND SIZE -->
-                        <div class="flex justify-center items-center self-start text-sm">
-                            <!-- COLOR -->
-                            <div>
-                                <span
-                                    class="w-4 h-4 text-center rounded-full inline-block align-middle bg-fadedBlack"></span>
-                                <span class="text-fadedBlack border-r border-fadedBlack pr-2">Black</span>
-                            </div>
-                            <!-- SIZE -->
-                            <div>
-                                <span class="text-fadedBlack pl-2">Size=42</span>
-                            </div>
-                        </div>
-                        <!-- QUANTITY AND PRICE -->
-                        <div class="flex justify-between items-center w-full">
-                            <span class="font-bold" id="total-price">$105.00</span>
-                            <div class="quantity flex items-center gap-2 box-border">
-                                <div class="flex items-center rounded-full bg-gray box-border">
-                                    <button id="decreaseBtn"
-                                        class="px-1 py-1 text-black rounded-l focus:outline-none text-xl">
-                                        <i class="bi bi-dash"></i>
-                                    </button>
-                                    <input id="quantityInput" type="number"
-                                        class="w-8 px-1 py-1 text-center bg-gray focus:outline-none" value="1" min="1"
-                                        max="10">
-                                    <button id="increaseBtn"
-                                        class="px-1 py-1 text-black rounded-r focus:outline-none text-xl">
-                                        <i class="bi bi-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="font-semibold" id="price">10$</span>
+                    <i class="bi bi-chevron-right cursor-pointer" id="shipping"></i>
                 </div>
             </div>
         </section>
-        <section class="border-b-2 border-gray mt-5 pb-5">
-            <h3 class="font-semibold text-lg">Choose Shipping</h3>
-            <div class="flex justify-between items-center bg-white shadow-sm rounded-md py-5">
-                <div class="flex gap-2">
-                    <i class="bi bi-truck"></i>
-                    <span>Choose Shipping Type</span>
-                </div>
-                <i class="bi bi-chevron-right cursor-pointer" id="shipping"></i>
-            </div>
-        </section>
-        <section class="border-b-2 border-gray mt-5 pb-5">
+        <!-- PROMO CODE -->
+        <section class="border-b-2 border-gray mt-5 pb-5" id="section-4">
             <h3 class="font-semibold text-lg">Promo Code</h3>
             <div class="my-4 flex justify-center items-center gap-5">
                 <input type="search" name="search" id="search" placeholder="Enter Promo Code"
@@ -111,17 +78,17 @@
                 <div class=" border-b-2 border-gray flex flex-col gap-3 pb-3 mb-3">
                     <div class="flex justify-between items-center">
                         <span>Amount</span>
-                        <span>$800.00</span>
+                        <span id="amount-cost">$800.00</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <span>Shipping</span>
-                        <span>-</span>
+                        <span id="shipping-cost">-</span>
                     </div>
 
                 </div>
                 <div class="flex justify-between items-center">
                     <span>Total</span>
-                    <span>-</span>
+                    <span id="total-of-all">-</span>
                 </div>
             </div>
         </section>
