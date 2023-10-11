@@ -114,32 +114,43 @@ sizeContainer.addEventListener("click", (event) => {
 
 //-----ADD TO DB FUNCTION------
 async function postToDb() {
-  try {
-    const response = await fetch("http://localhost:3000/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(postData),
-    });
-    console.log(postData);
-    if (response.ok) {
-      console.log("Data sent to the server successfully.");
-    } else {
-      console.error("Failed to send data to the server.");
-    }
-  } catch (error) {
+  if (!postData.color || !postData.size) {
     console.error(
-      "An error occurred while sending the POST request:",
-      error
+      "Please select color and size before adding to the cart."
     );
+    return;
+  } else {
+    try {
+      const response = await fetch("http://localhost:3000/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+      console.log(postData);
+      if (response.ok) {
+        console.log("Data sent to the server successfully.");
+      } else {
+        console.error("Failed to send data to the server.");
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred while sending the POST request:",
+        error
+      );
+    }
   }
 }
 
 //------ADD TO CART BUTTON--------
 const addToCartBtn = document.querySelector("#cart-btn");
 addToCartBtn.addEventListener("click", () => {
-  window.location.href = "../views/myCart.html";
+  if (!postData.color || !postData.size) {
+    console.error(
+      "Please select color and size before adding to the cart."
+    );
+  } else window.location.href = "../views/myCart.html";
   const totalPrice = totalPriceElem.textContent;
   postData.totalPrice = totalPrice;
   postData.quantity = quantityInput.value;
