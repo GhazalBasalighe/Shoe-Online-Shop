@@ -12,6 +12,13 @@ navBar.addEventListener("click", addFilledIcons);
 //------SEARCH iCON REDIRECT-------
 redirectSearchPage();
 
+//------SEARCH iCON REDIRECT-------
+const checkoutBtn = document.querySelector("#cart-btn");
+checkoutBtn.addEventListener(
+  "click",
+  () => (window.location.href = "../views/checkout.html")
+);
+
 // //------RENDER MY ORDERS PAGE-------
 // const homePage = document.querySelector("#home");
 // const ordersIcon = document.querySelector('[data-behavior="orders"]');

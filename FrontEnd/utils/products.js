@@ -10,7 +10,7 @@ function setTitle() {
   const urlSearchParams = new URLSearchParams(window.location.search);
   const filterParam = urlSearchParams.get("filter");
   pageTitle.textContent = filterParam;
-  if (filterParam == "See All" || filterParam == "All") {
+  if (filterParam == "All") {
     generateProducts();
     return;
   }

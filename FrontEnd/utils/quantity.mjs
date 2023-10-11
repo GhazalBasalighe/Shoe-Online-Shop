@@ -36,3 +36,5 @@ increaseBtn.addEventListener("click", () => {
   quantityInput.value++;
   handleQuantityChange();
 });
+
+handleQuantityChange();

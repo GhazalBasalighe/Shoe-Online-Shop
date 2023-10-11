@@ -79,3 +79,12 @@ categoryContainer.addEventListener("click", redirectDetails(productsURL));
 
 //------SEARCH BAR REDIRECT-------
 redirectSearchPage("focus");
+
+//------SEE ALL REDIRECT-------
+const seeAllBtn = document.querySelector("#see-all");
+seeAllBtn.addEventListener(
+  "click",
+  () =>
+    (window.location.href =
+      "http://127.0.0.1:5500/views/products.html?filter=All")
+);
